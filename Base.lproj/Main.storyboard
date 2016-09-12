@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YQP-QF-2tD">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="Hg2-TT-YmN">
+            <objects>
+                <viewController id="DRQ-Zw-AUI" userLabel="Map View Controller" customClass="LocationMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ceg-dP-lLF"/>
+                        <viewControllerLayoutGuide type="bottom" id="AhC-0C-hT3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TD9-au-yf9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Vfa-iQ-V3o">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="oui-Re-6iO">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tVb-QA-zq3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vfa-iQ-V3o" firstAttribute="top" secondItem="ceg-dP-lLF" secondAttribute="bottom" constant="44" id="212-kT-2wg"/>
+                            <constraint firstItem="AhC-0C-hT3" firstAttribute="top" secondItem="Vfa-iQ-V3o" secondAttribute="bottom" id="61Y-TZ-aTs"/>
+                            <constraint firstAttribute="trailing" secondItem="oui-Re-6iO" secondAttribute="trailing" id="8zA-hV-Kd5"/>
+                            <constraint firstItem="oui-Re-6iO" firstAttribute="leading" secondItem="TD9-au-yf9" secondAttribute="leading" id="As0-4i-Luo"/>
+                            <constraint firstItem="Vfa-iQ-V3o" firstAttribute="top" secondItem="oui-Re-6iO" secondAttribute="bottom" id="LDr-qP-MaY"/>
+                            <constraint firstItem="oui-Re-6iO" firstAttribute="top" secondItem="ceg-dP-lLF" secondAttribute="bottom" id="MVy-hR-yaZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Vfa-iQ-V3o" secondAttribute="trailing" id="Swo-Ml-Y2O"/>
+                            <constraint firstItem="Vfa-iQ-V3o" firstAttribute="leading" secondItem="TD9-au-yf9" secondAttribute="leading" id="Wcu-Gq-MDn"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="map-pin" id="cHc-qk-Xu2"/>
+                    <connections>
+                        <outlet property="mapView" destination="Vfa-iQ-V3o" id="D6P-Nd-P2Q"/>
+                        <outlet property="searchBar" destination="oui-Re-6iO" id="khR-KM-aFu"/>
+                        <outlet property="statusBar" destination="tVb-QA-zq3" id="Mvt-qw-ynd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Pa-Ax-F2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197" y="-269"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3oA-e0-uzy">
+            <objects>
+                <tabBarController id="YQP-QF-2tD" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="jaT-pp-ykZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vX7-AT-8Wf" kind="relationship" relationship="viewControllers" id="bZF-fD-6YX"/>
+                        <segue destination="DRQ-Zw-AUI" kind="relationship" relationship="viewControllers" id="1AT-E1-OCl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jbI-7F-qVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1203" y="-628"/>
+        </scene>
+        <!--Table Navigation Controller-->
+        <scene sceneID="Xnp-g7-K7q">
+            <objects>
+                <navigationController title="Table Navigation Controller" id="vX7-AT-8Wf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Night Life" image="moon" id="dqT-3E-jIK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cAn-mR-i5m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="OIJ-Xl-4de" kind="relationship" relationship="rootViewController" id="GYY-dw-7DJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PXa-WW-PA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197" y="-1025"/>
+        </scene>
+        <!--Night Life-->
+        <scene sceneID="Vct-d9-9EQ">
+            <objects>
+                <tableViewController id="OIJ-Xl-4de" customClass="LocationTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Atl-ta-7uu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationTableViewCell" rowHeight="100" id="g8b-38-na1" customClass="LocationTableViewCell">
+                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g8b-38-na1" id="m4a-QE-hCC">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8f-vf-GZd">
+                                            <rect key="frame" x="8" y="23" width="290" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPd-2A-PsF">
+                                            <rect key="frame" x="8" y="52" width="290" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addressLabel" destination="kPd-2A-PsF" id="GYP-Pk-y5p"/>
+                                    <outlet property="nameLabel" destination="Q8f-vf-GZd" id="2Zj-Dl-sh4"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OIJ-Xl-4de" id="kmn-i7-cnB"/>
+                            <outlet property="delegate" destination="OIJ-Xl-4de" id="ndX-H6-anL"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Night Life" image="moon" id="ksA-Ox-814"/>
+                    <navigationItem key="navigationItem" id="H1s-9W-1U9"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IcB-3e-rNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="534" y="-1025"/>
+        </scene>
+        <!--Location Detail View Controller-->
+        <scene sceneID="2vn-1Z-bvb">
+            <objects>
+                <viewController storyboardIdentifier="locationDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q8W-m5-8tO" customClass="LocationDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mmz-SR-m8u"/>
+                        <viewControllerLayoutGuide type="bottom" id="reY-yv-YYl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eEa-8Q-FYJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6s4-Nf-lla">
+                                <rect key="frame" x="279" y="50" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihh-eE-FZq">
+                                <rect key="frame" x="279" y="79" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ihh-eE-FZq" firstAttribute="top" secondItem="6s4-Nf-lla" secondAttribute="bottom" constant="8" id="Fly-TM-jia"/>
+                            <constraint firstItem="6s4-Nf-lla" firstAttribute="centerX" secondItem="eEa-8Q-FYJ" secondAttribute="centerX" id="JAe-9B-sFh"/>
+                            <constraint firstItem="ihh-eE-FZq" firstAttribute="centerX" secondItem="eEa-8Q-FYJ" secondAttribute="centerX" id="jrw-kF-F2E"/>
+                            <constraint firstItem="6s4-Nf-lla" firstAttribute="top" secondItem="mmz-SR-m8u" secondAttribute="bottom" constant="30" id="r4J-Uo-YPL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="ihh-eE-FZq" id="1ux-er-hJd"/>
+                        <outlet property="nameLabel" destination="6s4-Nf-lla" id="kGh-Jr-Sfg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N0y-Fh-hCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="534" y="-269"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="map-pin" width="30" height="30"/>
+        <image name="moon" width="30" height="30"/>
+    </resources>
+</document>
